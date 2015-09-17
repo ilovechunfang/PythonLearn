@@ -130,5 +130,7 @@ class ModelMetaClass(type):
         
         
         
+        
+        
         return type.__new__(cls, name, bases, attrs)
         
