@@ -132,7 +132,8 @@ class ModelMetaClass(type):
         for k in mappings.keys():
             attrs.pop(k)
         print('test')
-        
+        print('test')
+        print('test')
         
         
         
