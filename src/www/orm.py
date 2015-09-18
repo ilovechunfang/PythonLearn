@@ -122,7 +122,7 @@ class ModelMetaClass(type):
         tableName = attrs.get('__table__', None) or name
         logging.info('found model : %s (table: %s)' %(name, tableName))
         mappings = dict()
-        fields = []#除主键外的属性名
+        fields = [] #除主键外的属性名
         primaryKey  = None
         for k, v in attrs.items():
             print('%s = %s' %(k, v))
@@ -250,7 +250,17 @@ class Model(dict, metaclass = ModelMetaClass):
       
     def update(self):
         args = list(map(self.getValue, self.__fields__))
-        
+        args.append(self.getValueOrDefault(self.__primarykey__))
+        rows = yield from execute(self.__update__, args)
+        if rows != 1:
+            logging.warn('failed to remove by primary key: affected rows: %s' %rows)
+
+    def remove(self):
+        args = [self.getValue(self.__primarykey__)]
+        rows = yield from execute(self.__delete__, args)
+        if rows != 1:
+            logging.warn('failed to delete by primary key : affected rows: %s' %rows)
+    
     
     
     @classmethod
