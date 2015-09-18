@@ -127,7 +127,11 @@ class ModelMetaClass(type):
                     primaryKey = k
                 else :
                     fields.append(k)
-        
+        if not primaryKey:
+            raise StandardError('Primary key not found.')
+        for k in mappings.keys():
+            attrs.pop(k)
+        print('test')
         
         
         
