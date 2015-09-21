@@ -5,12 +5,14 @@ Created on 2015-9-17
 '''
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import asyncio, logging
 from test.pickletester import metaclass
+
+import aiomysql
+
 
 __author__ = 'lovemyself'
 
-import asyncio, logging
-import aiomysql
 
 def log(sql, args = ()):
     logging.info('SQL: %s' %sql)

@@ -1,3 +1,6 @@
 eclipse.preferences.version=1
+encoding//src/www/apis.py=utf-8
 encoding//src/www/app.py=utf-8
+encoding//src/www/coroweb.py=utf-8
+encoding//src/www/models.py=utf-8
 encoding/<project>=UTF-8

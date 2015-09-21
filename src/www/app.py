@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from aiohttp import web
 import asyncio
+import logging
+
+from aiohttp import web
+from aiohttp import web
+
 
 __author__ = 'lovemyself'
 
@@ -9,8 +13,6 @@ __author__ = 'lovemyself'
 asyn web Application
 '''
 
-import logging
-from aiohttp import web
 
 logging.basicConfig(level = logging.INFO)
 
